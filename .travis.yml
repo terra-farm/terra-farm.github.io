@@ -11,7 +11,7 @@ addons:
 # Clean and don't fail
 install:
   - rm -rf public || exit 0
-  - wget -o /tmp/hugo_0.38.2_Linux-64bit.deb https://github.com/gohugoio/hugo/releases/download/v0.38.2/hugo_0.38.2_Linux-64bit.deb
+  - wget -O /tmp/hugo_0.38.2_Linux-64bit.deb https://github.com/gohugoio/hugo/releases/download/v0.38.2/hugo_0.38.2_Linux-64bit.deb
   - sudo dpkg -i /tmp/hugo_0.38.2_Linux-64bit.deb
 
 # Build the website
@@ -19,12 +19,11 @@ script:
   - hugo
 
 # Deploy to GitHub pages
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   local_dir: public
-#   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-#   email: ringo@de-smet.name
-#   name: "Ringo De Smet"
-#   on:
-#     branch: master
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: public
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: site
+  target-branch: master
