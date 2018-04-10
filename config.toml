@@ -1,0 +1,5 @@
+baseURL = "https://terra-farm.github.io/"
+languageCode = "en-us"
+title = "Terra-Farm - The Terraform Community"
+
+theme = "smorg"
