@@ -12,7 +12,7 @@ addons:
 install:
   - rm -rf public || exit 0
   - wget -o /tmp/hugo_0.38.2_Linux-64bit.deb https://github.com/gohugoio/hugo/releases/download/v0.38.2/hugo_0.38.2_Linux-64bit.deb
-  - sudo dpgk -i /tmp/hugo_0.38.2_Linux-64bit.deb
+  - sudo dpkg -i /tmp/hugo_0.38.2_Linux-64bit.deb
 
 # Build the website
 script:
