@@ -7,3 +7,9 @@ theme = "smorg"
 [params]
 fullname = "The Terraform Community"
 logotype = "<span class=\"has-text-weight-bold\">Terra-<span class=\"has-text-danger\">Farm</span></span>"
+
+[[menu.sectionmenu]]
+  name = "Github"
+  weight = 100
+  pre = "<h3>All the code</h3>"
+  url = "https://github.com/terra-farm"
