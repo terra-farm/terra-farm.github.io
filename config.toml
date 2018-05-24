@@ -3,3 +3,7 @@ languageCode = "en-us"
 title = "Terra-Farm - The Terraform Community"
 
 theme = "smorg"
+
+[params]
+fullname = "The Terraform Community"
+logotype = "<span class=\"has-text-weight-bold\">Terra-<span class=\"has-text-danger\">Farm</span></span>"
