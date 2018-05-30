@@ -2,14 +2,24 @@ baseURL = "https://terra-farm.github.io/"
 languageCode = "en-us"
 title = "Terra-Farm - The Terraform Community"
 
-theme = "smorg"
+theme = "now-ui"
 
 [params]
 fullname = "The Terraform Community"
 logotype = "<span class=\"has-text-weight-bold\">Terra-<span class=\"has-text-danger\">Farm</span></span>"
 
-[[menu.sectionmenu]]
-  name = "Github"
-  weight = 100
-  pre = "<h3>All the code</h3>"
+# [[menu.main]]
+#     name = "Providers"
+#     url = "/providers"
+#     pre = "<i class='now-ui-icons design_app'></i>"
+#     weight = 1
+# [[menu.main]]
+#     name = "Modules"
+#     url = "/modules"
+#     pre = "<i class='now-ui-icons design_app'></i>"
+#     weight = 2
+
+[[menu.footer]]
+  identifier = "github"
+  pre = "<i class='fa fa-github'></i>"
   url = "https://github.com/terra-farm"
