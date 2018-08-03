@@ -2,7 +2,7 @@ baseURL = "https://terra-farm.github.io/"
 languageCode = "en-us"
 title = "Terra-Farm - The Terraform Community"
 
-theme = "now-ui"
+theme = "hugo-now-ui"
 
 [params]
 fullname = "The Terraform Community"
