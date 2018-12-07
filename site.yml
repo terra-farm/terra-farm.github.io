@@ -1,0 +1,12 @@
+site:
+  title: Terra-Farm - The Terraform Community
+  url: https://terra-farm.github.io
+  start_page: ROOT::index.adoc 
+content:
+  sources:
+  - url: .
+    branches: HEAD, master
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
