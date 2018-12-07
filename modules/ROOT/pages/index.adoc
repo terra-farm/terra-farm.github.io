@@ -1,0 +1,5 @@
+= Welcome to Terra-Farm!
+:page-layout: home
+
+Welcome to the initial site of Terra-Farm, the place where you find out about community driven providers
+and modules.
