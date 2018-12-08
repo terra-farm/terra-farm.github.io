@@ -1,7 +1,7 @@
 site:
   title: Terra-Farm - The Terraform Community
   url: https://terra-farm.github.io
-  start_page: toplevel::index.adoc 
+  start_page: main::index.adoc 
 content:
   sources:
   - url: .

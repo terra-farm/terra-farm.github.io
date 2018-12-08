@@ -1,5 +1,5 @@
-name: toplevel
-title: Top Level Website
+name: main
+title: Terra-Farm
 version: 'master' 
 start_page: ROOT:index.adoc 
 nav: 
