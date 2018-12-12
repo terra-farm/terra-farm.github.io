@@ -8,6 +8,8 @@ content:
     branches: HEAD
   - url: https://github.com/terra-farm/terraform-provider-xenserver.git
     branches: master
+  - url: https://github.com/terra-farm/terraform-provider-virtualbox.git
+    branches: master
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
