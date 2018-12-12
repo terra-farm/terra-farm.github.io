@@ -7,7 +7,7 @@ node_js:
 
 # Build the website
 script:
-  - npx antora site.yml --stacktrace
+  - npx antora site.yml --stacktrace --pull
 
 # Deploy to GitHub pages
 deploy:
