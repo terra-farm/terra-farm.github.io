@@ -7,3 +7,12 @@ The website is hosted on Github Pages, with the default `github.io` domain name.
 The site sources live in the `site` branch. For a Github Pages website at the
 user or organization level, the built website needs to be pushed on the `master`
 branch.
+
+The site generator is https://antora.org[Antora]. This website generator can take sources
+from multiple git repositories. This allows us to keep the documentation for 
+Terraform providers and modules in their respective repositories. On top of that,
+Antora supports generating documentation for multiple versions of the providers
+and modules.
+
+If you want a good example of what is achievable with this site generator, have a look
+at the documentation of https://docs.couchbase.com[Couchbase].
