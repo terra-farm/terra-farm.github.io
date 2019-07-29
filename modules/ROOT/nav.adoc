@@ -1,1 +1,2 @@
 * xref:index.adoc[Welcome]
+* xref:installation.adoc[Installation]
