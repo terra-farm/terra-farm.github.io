@@ -1,4 +1,4 @@
-= Installation of the providers!
+= Installation of the providers
 :page-layout: home
 
 These installation instructions are based on the official Terraform documentation,
@@ -16,7 +16,7 @@ again.
 
 However, third-party providers and provisioners must be manually installed.
 
-### Plugin Locations
+== Plugin Locations
 
 By default, `terraform init` searches the following directories for plugins.
 Some of these directories are static, and some are relative to the current
