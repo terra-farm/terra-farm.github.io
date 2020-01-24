@@ -17,7 +17,7 @@ jobs:
         run: npm install
       - name: Generate the static website
         run: npx antora site.yml --stacktrace --pull
-      - name: Deploy to Gihub Pages
+      - name: Deploy to Github Pages
         if: success()
         uses: peaceiris/actions-gh-pages@v2.10.1
         env:
