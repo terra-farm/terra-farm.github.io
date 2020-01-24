@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xenserver_network :: Terra-Farm - The Terraform Community</title>
+    <link rel="canonical" href="https://terra-farm.github.io/provider-xenserver/reference/resource_network.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../brand/css/site.css">
+    </head>
+
+<body class="article">
+    <header class="header">
+    <nav class="navbar is-primary" role="naviation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://terra-farm.github.io">Terra-Farm - The Terraform Community</a>
+            <button class="navbar-burger burger" data-target="topbar-nav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Providers</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../../provider-virtualbox/index.html">VirtualBox Provider</a>
+                        <a class="navbar-item" href="../../provider-xenorchestra/index.html">Xen Orchestra Provider</a>
+                        <a class="navbar-item" href="../index.html">XenServer Provider</a>
+                    </div>
+                </div>
+                <!--<div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Modules</a>
+                    <div class="navbar-dropdown">
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </nav>
+</header>    <div class="section">
+    <div class="columns">
+        <div class="column is-3 ">
+            <aside class="menu is-hidden-mobile">
+                <h5 class="subtitle is-5">XenServer Provider</h5>
+<p class="menu-label">
+General
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="../index.html">Usage</a>
+            </li>
+</ul>
+</ul>
+<p class="menu-label">
+Data Sources
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="datasource_pif.html">pif</a>
+            </li>
+    <li data-depth="1">
+        <a  href="datasource_pifs.html">pifs</a>
+            </li>
+    <li data-depth="1">
+        <a  href="datasource_sr.html">sr</a>
+            </li>
+</ul>
+</ul>
+<p class="menu-label">
+Resources
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="resource_sr.html">sr</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vbd.html">vbd</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vdi.html">vdi</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vif.html">vif</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vlan.html">vlan</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vm.html">vm</a>
+            </li>
+</ul>
+</ul>
+            </aside>
+        </div>
+        <div class="column is-9">
+            <div class="toolbar" role="navigation">
+    <button class="navigation-toggle"></button>
+    <a href="../../main/index.html" class="home-link"></a>
+</div>            <div class="box content">
+            <article class="doc">
+    <h3 class="title is-3">xenserver_network</h3>
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides a XenServer network resource.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_usage"><a class="anchor" href="#_example_usage"></a>Example Usage</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl">resource "xenserver_network" "demo" {
+  name_label = "Demo"
+  description = "Demo network from Terraform"
+  bridge = ""
+  other_config {
+    automatic = "false"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+</article>            </div>
+        </div>
+    </div>
+</div>    <footer class="footer is-secondary">
+    <p>This site was built with <a href="https://antora.org">Antora</a>.</p>
+</footer><script src="../../brand/js/site.js"></script>
+<script src="../../brand/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script></body>
+
+</html>

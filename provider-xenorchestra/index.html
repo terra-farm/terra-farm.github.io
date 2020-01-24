@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xen Orchestra Provider :: Terra-Farm - The Terraform Community</title>
+    <link rel="canonical" href="https://terra-farm.github.io/provider-xenorchestra/index.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../brand/css/site.css">
+    </head>
+
+<body class="article">
+    <header class="header">
+    <nav class="navbar is-primary" role="naviation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://terra-farm.github.io">Terra-Farm - The Terraform Community</a>
+            <button class="navbar-burger burger" data-target="topbar-nav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Providers</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../provider-virtualbox/index.html">VirtualBox Provider</a>
+                        <a class="navbar-item" href="index.html">Xen Orchestra Provider</a>
+                        <a class="navbar-item" href="../provider-xenserver/index.html">XenServer Provider</a>
+                    </div>
+                </div>
+                <!--<div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Modules</a>
+                    <div class="navbar-dropdown">
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </nav>
+</header>    <div class="section">
+    <div class="columns">
+        <div class="column is-3 ">
+            <aside class="menu is-hidden-mobile">
+                <h5 class="subtitle is-5">Xen Orchestra Provider</h5>
+<p class="menu-label">
+Data Sources
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="reference/data_source_pif.html">pif</a>
+            </li>
+    <li data-depth="1">
+        <a  href="reference/data_source_template.html">template</a>
+            </li>
+</ul>
+</ul>
+<p class="menu-label">
+Resources
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="reference/resource_cloud_config.html">cloud_config</a>
+            </li>
+    <li data-depth="1">
+        <a  href="reference/resource_vm.html">vm</a>
+            </li>
+</ul>
+</ul>
+            </aside>
+        </div>
+        <div class="column is-9">
+            <div class="toolbar" role="navigation">
+    <button class="navigation-toggle"></button>
+    <a href="../main/index.html" class="home-link"></a>
+</div>            <div class="box content">
+            <article class="doc">
+    <h3 class="title is-3">Xen Orchestra Provider</h3>
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Xen Orchestra provider is used to interact with the resources supported by <a href="https://github.com/vatesfr/xen-orchestra">Xen Orchestra</a>.
+The provider needs to be configured with the proper credentials before it can be used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements"><a class="anchor" href="#_requirements"></a>Requirements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Terraform 0.12+</p>
+</li>
+<li>
+<p>Go 1.12 (to build the provider plugin)</p>
+</li>
+<li>
+<p>Xen Orchestra 5.50.1</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_provider"><a class="anchor" href="#_using_the_provider"></a>Using the provider</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you&#8217;re building the provider, follow the instructions to install it as a <a href="https://www.terraform.io/docs/plugins/basics.html#installing-plugins">plugin</a>. After placing it into your plugins directory, run <code>terraform init</code> to initialize it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_usage"><a class="anchor" href="#_example_usage"></a>Example Usage</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl"># Configure the XenServer Provider
+provider "xenorchestra" {
+  # Must be ws or wss
+  url      = "ws://hostname-of-server" # Or set XOA_URL environment variable
+  username = "&lt;username&gt;"              # Or set XOA_USER environment variable
+  password = "&lt;password&gt;"              # Or set XOA_PASSWORD environment variable
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+</article>            </div>
+        </div>
+    </div>
+</div>    <footer class="footer is-secondary">
+    <p>This site was built with <a href="https://antora.org">Antora</a>.</p>
+</footer><script src="../brand/js/site.js"></script>
+<script src="../brand/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script></body>
+
+</html>

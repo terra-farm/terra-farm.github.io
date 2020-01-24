@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://terra-farm.github.io/sitemap-main.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://terra-farm.github.io/sitemap-provider-virtualbox.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://terra-farm.github.io/sitemap-provider-xenorchestra.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://terra-farm.github.io/sitemap-provider-xenserver.xml</loc>
+</sitemap>
+</sitemapindex>

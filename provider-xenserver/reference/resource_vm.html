@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xenserver_vm :: Terra-Farm - The Terraform Community</title>
+    <link rel="canonical" href="https://terra-farm.github.io/provider-xenserver/reference/resource_vm.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../brand/css/site.css">
+    </head>
+
+<body class="article">
+    <header class="header">
+    <nav class="navbar is-primary" role="naviation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://terra-farm.github.io">Terra-Farm - The Terraform Community</a>
+            <button class="navbar-burger burger" data-target="topbar-nav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Providers</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="../../provider-virtualbox/index.html">VirtualBox Provider</a>
+                        <a class="navbar-item" href="../../provider-xenorchestra/index.html">Xen Orchestra Provider</a>
+                        <a class="navbar-item" href="../index.html">XenServer Provider</a>
+                    </div>
+                </div>
+                <!--<div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">Modules</a>
+                    <div class="navbar-dropdown">
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </nav>
+</header>    <div class="section">
+    <div class="columns">
+        <div class="column is-3 ">
+            <aside class="menu is-hidden-mobile">
+                <h5 class="subtitle is-5">XenServer Provider</h5>
+<p class="menu-label">
+General
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="../index.html">Usage</a>
+            </li>
+</ul>
+</ul>
+<p class="menu-label">
+Data Sources
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="datasource_pif.html">pif</a>
+            </li>
+    <li data-depth="1">
+        <a  href="datasource_pifs.html">pifs</a>
+            </li>
+    <li data-depth="1">
+        <a  href="datasource_sr.html">sr</a>
+            </li>
+</ul>
+</ul>
+<p class="menu-label">
+Resources
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="resource_sr.html">sr</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vbd.html">vbd</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vdi.html">vdi</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vif.html">vif</a>
+            </li>
+    <li data-depth="1">
+        <a  href="resource_vlan.html">vlan</a>
+            </li>
+    <li data-depth="1">
+        <a class="is-active" href="resource_vm.html">vm</a>
+            </li>
+</ul>
+</ul>
+            </aside>
+        </div>
+        <div class="column is-9">
+            <div class="toolbar" role="navigation">
+    <button class="navigation-toggle"></button>
+    <a href="../../main/index.html" class="home-link"></a>
+</div>            <div class="box content">
+            <article class="doc">
+    <h3 class="title is-3">xenserver_vm</h3>
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides a XenServer virtual machine resource. This can be used to create, modify, and delete virtual machines.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_usage"><a class="anchor" href="#_example_usage"></a>Example Usage</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl">resource "xenserver_vm" "web" {
+    name_label = "web"
+    base_template_name = "&lt;desired template&gt;"
+    static_mem_min = 2147483648 # 2GB
+    static_mem_max = 2147483648
+    dynamic_mem_min = 2147483648
+    dynamic_mem_max = 2147483648
+    boot_order = "cdn"
+    network_interface {
+        network_uuid = "&lt;uuid&gt;"
+        mac = "&lt;desired-mac&gt;"
+        mtu = 1500
+        device = 0
+    }
+    network_interface {
+        network_uuid = "&lt;desired network&gt;"
+        mtu = 1500
+        device = 1
+    }
+    vcpus = 2
+    cdrom {
+      vdi_uuid = "&lt;iso uuid&gt;"
+    }
+    hard_drive {
+      vdi_uuid = "&lt;desired vdi&gt;"
+    }
+    other_config {
+        auto_poweron = "true"
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_argument_reference"><a class="anchor" href="#_argument_reference"></a>Argument Reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following arguments are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name_label</code> - (Required) The name given for this VM.</p>
+</li>
+<li>
+<p><code>base_template_name</code> -</p>
+</li>
+<li>
+<p><code>static_mem_min</code> -</p>
+</li>
+<li>
+<p><code>static_mem_max</code> -</p>
+</li>
+<li>
+<p><code>dynamic_mem_min</code> -</p>
+</li>
+<li>
+<p><code>boot_order</code> -</p>
+</li>
+<li>
+<p><code>vcpus</code> -</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>network_interface</code> block supports:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>network_uuid</code> -</p>
+</li>
+<li>
+<p><code>mtu</code> -</p>
+</li>
+<li>
+<p><code>device</code> -</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>cdrom</code> block supports:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>vdi_uuid</code> -</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>hard_drive</code> block supports:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>vdi_uuid</code> -</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>other_config</code> block sets any number of given key-value pairs in the VM&#8217;s <code>other-config</code> map.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_attributes_reference"><a class="anchor" href="#_attributes_reference"></a>Attributes Reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following attributes are exported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code> - The instance ID.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</article>            </div>
+        </div>
+    </div>
+</div>    <footer class="footer is-secondary">
+    <p>This site was built with <a href="https://antora.org">Antora</a>.</p>
+</footer><script src="../../brand/js/site.js"></script>
+<script src="../../brand/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script></body>
+
+</html>
