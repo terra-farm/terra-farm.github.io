@@ -1,5 +1,4 @@
 = Installation of the providers
-:page-layout: home
 
 These installation instructions are based on the official Terraform documentation,
 more specifically the explanation on 
