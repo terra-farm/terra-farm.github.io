@@ -39,60 +39,123 @@
             </div>
         </div>
     </nav>
-</header>    <div class="section has-text-centered">
-        <h1 class="title is-1">Welcome to Terra-Farm!</h1>
-        <p>Terra-Farm is the community maintaining third-party Terraform providers.</p>
-    </div>
-    <div class="section has-text-centered has-background-link">
-        <h2 class="title is-2">Providers</h2>
-        <div class="section">
-            <div class="columns">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">VirtualBox Provider</p>
-                        </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    <a href="../provider-virtualbox/index.html">Documentation </a>
-                                </span>
-                            </p>
-                        </footer>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">Xen Orchestra Provider</p>
-                        </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    <a href="../provider-xenorchestra/index.html">Documentation </a>
-                                </span>
-                            </p>
-                        </footer>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">XenServer Provider</p>
-                        </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    <a href="../provider-xenserver/index.html">Documentation </a>
-                                </span>
-                            </p>
-                        </footer>
-                    </div>
-                </div>
-            </div>
+</header>    <div class="section">
+    <div class="columns">
+        <div class="column is-3 ">
+            <aside class="menu is-hidden-mobile">
+                <h5 class="subtitle is-5">Terra-Farm</h5>
+<p class="menu-label">
+
+</p>
+<ul class="menu-list">
+    <ul class="menu-list">
+    <li data-depth="1">
+        <a  href="index.html">Welcome</a>
+            </li>
+    <li data-depth="1">
+        <a class="is-active" href="installation.html">Installation</a>
+            </li>
+</ul>
+</ul>
+            </aside>
+        </div>
+        <div class="column is-9">
+            <div class="toolbar" role="navigation">
+    <button class="navigation-toggle"></button>
+    <a href="index.html" class="home-link"></a>
+</div>            <div class="box content">
+            <article class="doc">
+    <h3 class="title is-3">Installation of the providers</h3>
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>These installation instructions are based on the official Terraform documentation,
+more specifically the explanation on
+<a href="https://www.terraform.io/docs/extend/how-terraform-works.html#discovery">plugin discovery</a>.
+As the content of the Terraform website is MPL 2.0 licensed, part of the content
+is duplicated and adapted to reflect manual installation of the provider plugins.</p>
+</div>
+<div class="paragraph">
+<p>When <code>terraform init</code> is run, Terraform reads configuration files in the working
+directory to determine which plugins are necessary, searches for installed
+plugins in several locations, sometimes downloads additional plugins, decides
+which plugin versions to use, and writes a lock file to ensure Terraform will
+use the same plugin versions in this directory until <code>terraform init</code> runs
+again.</p>
+</div>
+<div class="paragraph">
+<p>However, third-party providers and provisioners must be manually installed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugin_locations"><a class="anchor" href="#_plugin_locations"></a>Plugin Locations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, <code>terraform init</code> searches the following directories for plugins.
+Some of these directories are static, and some are relative to the current
+working directory.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Directory</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In case the provider is only used in a single Terraform project.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location of the <code>terraform</code> binary (<code>/usr/local/bin</code>, for example.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For airgapped installations; see <a href="https://github.com/hashicorp/terraform/tree/master/tools/terraform-bundle"><code>terraform bundle</code></a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>terraform.d/plugins/&lt;OS&gt;_&lt;ARCH&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For checking custom providers into a configuration&#8217;s VCS repository. Not usually desirable, but sometimes necessary in Terraform Enterprise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.terraform/plugins/&lt;OS&gt;_&lt;ARCH&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically downloaded providers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~/.terraform.d/plugins</code> or <code>%APPDATA%\terraform.d\plugins</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The user plugins directory.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~/.terraform.d/plugins/&lt;OS&gt;_&lt;ARCH&gt;</code> or <code>%APPDATA%\terraform.d\plugins\&lt;OS&gt;_&lt;ARCH&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The user plugins directory, with explicit OS and architecture.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Note:</strong> <code>&lt;OS&gt;</code> and <code>&lt;ARCH&gt;</code> use the Go language&#8217;s standard OS and
+architecture names; for example, <code>darwin_amd64</code>.</p>
+</div>
+<div class="paragraph">
+<p>If <code>terraform init</code> is run with the <code>-plugin-dir=&lt;PATH&gt;</code> option (with a
+non-empty <code>&lt;PATH&gt;</code>), it overrides the default plugin locations and searches
+only the specified path.</p>
+</div>
+<div class="paragraph">
+<p>Provider and provisioner plugins can be installed in the same directories.
+Provider plugin binaries are named with the scheme <code>terraform-provider-&lt;NAME&gt;_vX.Y.Z</code>,
+while provisioner plugins use the scheme <code>terraform-provisioner-&lt;NAME&gt;_vX.Y.Z</code>.
+Terraform relies on filenames to determine plugin types, names, and versions.</p>
+</div>
+</div>
+</div>
+
+</article>            </div>
         </div>
     </div>
-    <footer class="footer is-secondary">
+</div>    <footer class="footer is-secondary">
     <p>This site was built with <a href="https://antora.org">Antora</a>.</p>
 </footer><script src="../brand/js/site.js"></script>
 <script src="../brand/js/vendor/highlight.js"></script>
