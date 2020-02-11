@@ -16,6 +16,6 @@ content:
       - v0.2.0
 ui:
   bundle:
-    url: https://github.com/terra-farm/terra-farm.ui/releases/download/v0.0.2/bundle.zip
+    url: https://github.com/terra-farm/terra-farm.ui/releases/download/v0.0.3/bundle.zip
     snapshot: true
   output_dir: brand
