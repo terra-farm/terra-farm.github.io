@@ -7,9 +7,6 @@
 <loc>https://terra-farm.github.io/sitemap-provider-virtualbox.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://terra-farm.github.io/sitemap-provider-xenorchestra.xml</loc>
-</sitemap>
-<sitemap>
 <loc>https://terra-farm.github.io/sitemap-provider-xenserver.xml</loc>
 </sitemap>
 </sitemapindex>
